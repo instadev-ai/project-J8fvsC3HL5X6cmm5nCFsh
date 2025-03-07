@@ -3,9 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { PlusCircle, DollarSign, Users, Clock, ArrowRightLeft } from "lucide-react";
+import { PlusCircle, ArrowRightLeft } from "lucide-react";
 import AddExpenseDialog from "@/components/features/AddExpenseDialog";
 import ExpenseList from "@/components/features/ExpenseList";
 import BalanceSummary from "@/components/features/BalanceSummary";
@@ -81,53 +79,6 @@ const Index = () => {
         </TabsList>
 
         <TabsContent value="dashboard" className="space-y-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
-                  <DollarSign className="h-4 w-4 text-primary" />
-                  Total Balance
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">$47.33</div>
-                <p className="text-xs text-muted-foreground">You are owed $65.50 and you owe $18.17</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
-                  <Users className="h-4 w-4 text-primary" />
-                  Friends
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{friends.length}</div>
-                <div className="flex -space-x-2 mt-2">
-                  {friends.map((friend) => (
-                    <Avatar key={friend.id} className="h-8 w-8 border-2 border-background">
-                      <AvatarFallback className="text-xs">{friend.name.substring(0, 2).toUpperCase()}</AvatarFallback>
-                    </Avatar>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-primary" />
-                  Recent Activity
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{expenses.length}</div>
-                <p className="text-xs text-muted-foreground">Expenses in the last 30 days</p>
-              </CardContent>
-            </Card>
-          </div>
-
           <Card>
             <CardHeader>
               <CardTitle>Balance Summary</CardTitle>
